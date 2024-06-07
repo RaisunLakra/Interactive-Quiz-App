@@ -16,8 +16,8 @@ class Category(BaseModel):
     category_name = models.CharField(max_length=100)
 
 class Question(BaseModel):
-    category = models.ForeignKey('Category', related_name='question', on_delete=models.CASCADE)
-    question = models.CharField(max_length=200)
+    category = models.ForeignKey('Category', related_name='question')
+    question = models.CharField(max_length=1000)
     marks = models.IntegerField(default=5)
 
 class Answer(BaseModel):
